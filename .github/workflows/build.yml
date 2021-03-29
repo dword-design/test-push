@@ -2,6 +2,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: cat foo.txt > bar.txt
 name: build
 on:
