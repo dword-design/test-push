@@ -4,6 +4,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cat foo.txt > bar.txt
+      - run: git config --global user.email "you@example.com"
+      - run: git config --global user.name "Your Name"
       - run: 'git commit -m "fix: update files"'
       - run: git push
 name: build
