@@ -1,0 +1,10 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo foo
+name: build
+on:
+  push:
+    branches:
+      - "**"
