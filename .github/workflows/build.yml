@@ -4,6 +4,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
       - run: cat foo.txt > bar.txt
       - run: git config --global user.email "you@example.com"
