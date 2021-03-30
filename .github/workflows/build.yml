@@ -2,9 +2,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo foo
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+      - run: cat foo.txt > bar.txt
+      - run: git config --global user.email "you@example.com"
+      - run: git config --global user.name "Your Name"
+      - run: git add .
+      - run: 'git commit -m "fix: update files"'
+      - run: git push
 name: build
 on:
+  pull_request: {}
   push:
     branches:
-      - "**"
+      - master
