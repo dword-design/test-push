@@ -3,9 +3,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # needed for forks
-          ref: ${{ github.event.pull_request.head.ref }}
+        # with:
+        #   fetch-depth: 0 # needed for forks
+        #   ref: ${{ github.event.pull_request.head.ref }}
       - run: cat foo.txt > bar.txt
       - run: git config --global user.email "you@example.com"
       - run: git config --global user.name "Your Name"
